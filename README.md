@@ -23,8 +23,8 @@ To drive home the concept of Prototype Oriented Programming in Javascript, we sh
 
 2 Admin Doctors
 
-- Create a Nurse Account
-- Create a Doctor Account
+- Create a New Nurse 
+- Create a New Doctor 
 - Read a medicalStaff
 - Read all Staff
 
@@ -33,6 +33,7 @@ All the above listed cadres inherit from a base class or parent called Medical S
 Medical Staff
 
 - Staff Name
+- Gender
 - Staff ID
 - Role
 - Read a Patient
