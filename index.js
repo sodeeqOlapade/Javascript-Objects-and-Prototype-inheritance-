@@ -28,12 +28,21 @@ const patient_two = nurse_Mike.admitNewPatient("John", "Male", 23, "Maleria", [
 console.log("Doctor read one patient", doctor_Jane.readOnePatient("PT-0000-0"));
 console.log("Nurse read all patient", nurse_mary.readAllPatient());
 
-nurse_mary.updatePatientRecord("PT-0000-0","Johnny", 43, "Maleria", ["Headache", "cold"]);
+nurse_mary.updatePatientRecord("PT-0000-0", "Johnny", 43, "Maleria", [
+  "Headache",
+  "cold"
+]);
 
-doctor_Elly.prescribeDrugsToPatient('PT-0000-1');
-doctor_Jane.referPatientToSpecialist('PT-0000-1');
-doctor_Jane.dischargePatient('PT-0000-1');
+console.log(doctor_Elly.prescribeDrugsToPatient("PT-0000-1"));
+doctor_Jane.referPatientToSpecialist("PT-0000-1");
+doctor_Jane.dischargePatient("PT-0000-1");
 
-console.log("Admin Doctor read one Medical Staff", Ben.readOneMedicalStaff("MS-0000-4"));
-console.log("Admin Doctor read All Medical Staff", Patricia.readAllMedicalStaff());
+console.log(
+  "Admin Doctor read one Medical Staff",
+  Ben.readOneMedicalStaff("MS-0000-4")
+);
+console.log(
+  "Admin Doctor read All Medical Staff",
+  Patricia.readAllMedicalStaff()
+);
 

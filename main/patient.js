@@ -19,14 +19,21 @@ function Patient(nurseId, nurseName, name, gender, age, ailment, symptoms) {
   console.log(this);
 }
 
-Patient.prototype.updatePatient = function(nurseId, patientId, name, age, ailment, symptoms) {
+Patient.prototype.updatePatient = function(
+  nurseId,
+  patientId,
+  name,
+  age,
+  ailment,
+  symptoms
+) {
   let patient = patientDatabase.find(
     patient => patient.patientId === patientId
   );
-  patient.name = name ;
-  patient.age = age || patient.age;
-  patient.ailment = ailment || patient.ailment;
-  patient.symptoms = symptoms || patient.symptoms;
+  patient.name = name;
+  patient.age = age;
+  patient.ailment = ailment;
+  patient.symptoms = symptoms;
   patient.editedBy = nurseId;
   console.log(`Patient ${patientId} details updated`);
   console.log(patient);
@@ -40,20 +47,22 @@ Patient.prototype.readAllPatient = function() {
   return patientDatabase;
 };
 
-Patient.prototype.discharge = function(doctorName, patientId){
+Patient.prototype.discharge = function(doctorName, patientId) {
   let patient = patientDatabase.find(patient => patientId === patientId);
   patient.isDisharged = true;
-  patient.dischargeAuthorisedBy = doctorName;   
+  patient.dischargeAuthorisedBy = doctorName;
   patient.dateDischarged = new Date().toLocaleDateString();
   patient.timeDischarged = new Date().toLocaleTimeString();
   console.log(`Patient ${patientId} discharged`);
-}
+};
 
-Patient.prototype.refer = function(patientId){
-  let patient = patientDatabase.find(patient => patientId === patientId);
+Patient.prototype.refer = function(patientId) {
+  let patient = patientDatabase.find(
+    patient => patient.patientId === patientId
+  );
   patient.referredToSpecialist = true;
   patient.dateReferred = new Date().toLocaleDateString();
   patient.timeReferred = new Date().toLocaleTimeString();
   console.log(`Patient ${patientId} referred to specialist`);
-}
+};
 module.exports = { Patient };
