@@ -31,8 +31,7 @@ Doctor.prototype.prescribeDrugsToPatient = function(patientId) {
     ailment => ailment.name === patientAilment
   ).medicalAdvice;
 
-  console.log(`Patient shold be given ${prescribedDrugs}`);
-  console.log(`Medical Advice: ${medicalAdvice}`);
+  return `Drugs: Patient should be given ${prescribedDrugs} \n Medical Advice: ${medicalAdvice}`;
 };
 
 Doctor.prototype.referPatientToSpecialist = function(patientId) {
